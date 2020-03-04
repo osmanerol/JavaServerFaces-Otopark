@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Update Price</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="CSS/index.css"/>
+    </h:head>
+    <h:body id="body1">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div  class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="homepage.xhtml" class="navbar-brand">Otopark</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="admin.xhtml">Admin Page</a>
+                    </li>
+                    <li style="margin-left:1220px;">
+                        <a href="homepage.xhtml">Log-Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+    <div class="container"  style="margin-bottom:100px;margin-top:72px;">
+        <h3 style="text-align: center;color:red;margin-top:0px;">Update Price</h3>
+        <h:form  id="form" style="margin:0px 300px;">
+            <div class="form-group">
+                <h:outputText value="CarType "/>          
+                <h:inputText class="form-control" value="#{priceUpd.carType}"/>
+            </div>
+            <div class="form-group">
+                <h:outputText value="0-2 "/>          
+                <h:inputText class="form-control" value="#{priceUpd.cost0_2}" />
+            </div>
+            <div class="form-group">
+                <h:outputText value="2-4 "/>          
+                <h:inputText class="form-control" value="#{priceUpd.cost2_4}" />
+            </div>
+            <div class="form-group">
+                <h:outputText value="4-6 "/>          
+                <h:inputText class="form-control" value="#{priceUpd.cost4_6}" />
+            </div>
+            <div class="form-group">
+                <h:outputText value="6-8 "/>          
+                <h:inputText class="form-control" value="#{priceUpd.cost6_8}" />
+            </div>
+            <div class="form-group">
+                <h:outputText value="8-12 "/>          
+                <h:inputText class="form-control" value="#{priceUpd.cost8_12}" />
+            </div>
+            <div class="form-group">
+                <h:outputText value="12-24 "/>          
+                <h:inputText class="form-control" value="#{priceUpd.cost12_24}" />
+            </div>
+            <div class="form-group">
+                <h:outputText value="Daily "/>          
+                <h:inputText class="form-control" value="#{priceUpd.costDay}" />
+            </div>
+            <div class="form-group">
+                <h:outputText value="Mounthly "/>          
+                <h:inputText class="form-control" value="#{priceUpd.costMounth}" />
+            </div>
+            <h:commandButton type="submit" value="Update" class="btn btn-danger" action="#{priceUpd.update()}" />
+        </h:form>
+    </div>
+        
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div  class="container-fluid">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li style="margin-left:600px"><a href="#">Copyright XYZ Software Since 2019</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </h:body>
+</html>
+

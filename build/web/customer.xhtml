@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Customer Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/index.css"/>
+    </h:head>
+    <h:body id="body1">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div  class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="homepage.xhtml" class="navbar-brand">Otopark</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li style="margin-left:1330px;">
+                        <a href="homepage.xhtml">Log-Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+        <div class="container">
+            <h3 style="text-align:center;margin-bottom:20px;">Personal Information</h3>
+            <h:form>
+                <h:dataTable  class="table table-hover" value="#{customer.getInfo()}" var="ptr">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Id</h:outputLabel>
+                        </f:facet>
+                        #{ptr.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Name</h:outputLabel>
+                        </f:facet>
+                        #{ptr.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Lastname</h:outputLabel>
+                        </f:facet>
+                        #{ptr.lastname}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Job</h:outputLabel>
+                        </f:facet>
+                        #{ptr.job}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Car Brand</h:outputLabel>
+                        </f:facet>
+                        #{ptr.carBrand}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Car Type</h:outputLabel>
+                        </f:facet>
+                        #{ptr.carType}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Plate Code</h:outputLabel>
+                        </f:facet>
+                        #{ptr.plateCode}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Email</h:outputLabel>
+                        </f:facet>
+                        #{ptr.email}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Password</h:outputLabel>
+                        </f:facet>
+                        #{ptr.password}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+        
+        <h3 style="text-align:center;margin-top:50px;">Otopark History</h3>s
+        <div class="container" style="margin-top: 20px" >
+            <h:form>
+                <h:dataTable class="table table-hover" value="#{customer.history()}" var="cust">
+                    <h:column>
+                        <f:facet name="header">PlateCode</f:facet>
+                        #{cust.plateCode}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Enter Time</f:facet>
+                        #{cust.enterTime}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Exit Time</f:facet>
+                        #{cust.exitTime}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+            
+        </div>
+        
+        
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div  class="container-fluid">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li style="margin-left:600px"><a href="#">Copyright XYZ Software Since 2019</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </h:body>
+</html>
+

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Otopark</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="CSS/index.css"/>
+    </h:head>
+    <h:body id="body1">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div  class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="homepage.xhtml" class="navbar-brand">Otopark</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="admin.xhtml">Admin Page</a>
+                    </li>
+                    <li style="margin-left:1220px;">
+                        <a href="homepage.xhtml">Log-Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+        <div class="container">    
+        <h1 style="text-align:center">Entrance</h1>
+        <h:form id="form" style="margin:0px 200px;">
+            <div class="form-group">
+                <h:outputText value="* PlateCode:  "/>          
+                <h:inputText class="form-control" value="#{otopark.plateCode}" />
+            </div>
+            
+            <div class="form-group">
+                <h:outputText value="* Enter time : "/>
+                <h:selectOneMenu value="#{otopark.enterTime}">
+                    <f:selectItem itemLabel="00.00" itemValue="0"/>
+                    <f:selectItem itemLabel="01.00" itemValue="1"/>
+                    <f:selectItem itemLabel="02.00" itemValue="2"/>
+                    <f:selectItem itemLabel="03.00" itemValue="3"/>
+                    <f:selectItem itemLabel="04.00" itemValue="4"/>
+                    <f:selectItem itemLabel="05.00" itemValue="5"/>
+                    <f:selectItem itemLabel="06.00" itemValue="6"/>
+                    <f:selectItem itemLabel="07.00" itemValue="7"/>
+                    <f:selectItem itemLabel="08.00" itemValue="8"/>
+                    <f:selectItem itemLabel="09.00" itemValue="9"/>
+                    <f:selectItem itemLabel="10.00" itemValue="10"/>
+                    <f:selectItem itemLabel="11.00" itemValue="11"/>
+                    <f:selectItem itemLabel="12.00" itemValue="12"/>
+                    <f:selectItem itemLabel="13.00" itemValue="13"/>
+                    <f:selectItem itemLabel="14.00" itemValue="14"/>
+                    <f:selectItem itemLabel="15.00" itemValue="15"/>
+                    <f:selectItem itemLabel="16.00" itemValue="16"/>
+                    <f:selectItem itemLabel="17.00" itemValue="17"/>
+                    <f:selectItem itemLabel="18.00" itemValue="18"/>
+                    <f:selectItem itemLabel="19.00" itemValue="19"/>
+                    <f:selectItem itemLabel="20.00" itemValue="20"/>
+                    <f:selectItem itemLabel="21.00" itemValue="21"/>
+                    <f:selectItem itemLabel="22.00" itemValue="22"/>
+                    <f:selectItem itemLabel="23.00" itemValue="23"/>
+                </h:selectOneMenu>
+            </div>
+            
+            <h:commandButton class="btn btn-danger" value="Save" type="submit" action="#{otopark.add()}"/>
+            <h:outputText style="color:red;margin-left: 75px" value="* mandatory"/>
+        </h:form>
+    </div>
+        
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div  class="container-fluid">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li style="margin-left:600px"><a href="#">Copyright XYZ Software Since 2019</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </h:body>
+</html>
+

@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Admin Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="CSS/index.css"/>
+        <style>
+           
+        </style>
+    </h:head>
+    <h:body id="body1">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div  class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="homepage.xhtml" class="navbar-brand">Otopark</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="admin.xhtml">Admin Page</a>
+                    </li>
+                    <li style="margin-left:1220px;">
+                        <a href="homepage.xhtml">Log-Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+        <h3 style="text-align:center;margin-top:140px">SQL Komutları</h3>
+        <div class="container">
+            <h:form>
+                <h1>The customer pay the highest price in total </h1>
+                <h:dataTable class="table table-hover" value="#{sql.highest()}" var="cst">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Id</h:outputLabel>
+                        </f:facet>
+                        #{cst.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Name</h:outputLabel>
+                        </f:facet>
+                        #{cst.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Lastname</h:outputLabel>
+                        </f:facet>
+                        #{cst.lastname}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Job</h:outputLabel>
+                        </f:facet>
+                        #{cst.job}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Car Brand</h:outputLabel>
+                        </f:facet>
+                        #{cst.carBrand}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Car Type</h:outputLabel>
+                        </f:facet>
+                        #{cst.carType}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Plate Code</h:outputLabel>
+                        </f:facet>
+                        #{cst.plateCode}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Email</h:outputLabel>
+                        </f:facet>
+                        #{cst.email}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Password</h:outputLabel>
+                        </f:facet>
+                        #{cst.password}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Pay</h:outputLabel>
+                        </f:facet>
+                        #{cst.price}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+        
+        
+        <div class="container">
+            <h:form>
+                <h1>Number of car types in history?</h1>
+                <h:dataTable style="margin-bottom:50px;" class="table table-hover" value="#{sql.type()}" var="cst2">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Cartype</h:outputLabel>
+                        </f:facet>
+                        #{cst2.carType}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Count</h:outputLabel>
+                        </f:facet>
+                        #{cst2.num}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+        
+        <div class="container">
+            <h:form>
+                <h1>Job</h1>
+                <h:dataTable style="margin-bottom:50px;" class="table table-hover" value="#{sql.job()}" var="cst4">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Job</h:outputLabel>
+                        </f:facet>
+                        #{cst4.job}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Total Time</h:outputLabel>
+                        </f:facet>
+                        #{cst4.num}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+
+        <div class="container">
+            <h:form>
+                <h1>Current Usage</h1>
+                <h:dataTable style="margin-bottom:50px;" class="table table-hover" value="#{sql.otopark()}" var="oto">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Name</h:outputLabel>
+                        </f:facet>
+                        #{oto.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Lastname</h:outputLabel>
+                        </f:facet>
+                        #{oto.lastname}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>PlateCode</h:outputLabel>
+                        </f:facet>
+                        #{oto.plateCode}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Enter Time </h:outputLabel>
+                        </f:facet>
+                        #{oto.enterTime}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+        
+        <div class="container">
+            <h:form>
+                <h1>Total time of parking history</h1>
+                <h:dataTable style="margin-bottom:100px;" class="table table-hover" value="#{sql.total()}" var="cst3">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Name</h:outputLabel>
+                        </f:facet>
+                        #{cst3.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>Lastname</h:outputLabel>
+                        </f:facet>
+                        #{cst3.lastname}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>PlateCode</h:outputLabel>
+                        </f:facet>
+                        #{cst3.plateCode}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputLabel>TotalTime</h:outputLabel>
+                        </f:facet>
+                        #{cst3.num}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+        
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div  class="container-fluid">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li style="margin-left:600px"><a href="#">Copyright XYZ Software Since 2019</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </h:body>
+</html>
+

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Log-in Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="CSS/index.css"/>
+    </h:head>
+    <h:body id="body1">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div  class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="homepage.xhtml" class="navbar-brand">Otopark</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="homepage.xhtml">Homepage</a></li>
+                    <li><a href="about.xhtml">About</a></li>
+                    <li><a href="price.xhtml">Price List</a></li>
+                    <li><a href="contact.xhtml">Contact </a></li>
+                
+                    <li style="margin-left:920px;">
+                        <a href="login.xhtml">Log-In</a>
+                    </li>
+                    <li>
+                        <a href="signin.xhtml">Sign-In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+        
+        
+    <div class="container">    
+        <h3 id="title3" style="text-align:center">Log-In</h3>
+        <h:form id="form">
+            <div class="form-group">
+                <h:outputText value="Email: "/>
+                <h:inputText class="form-control" value="#{login.email}"/>
+            </div>
+            <div class="form-group">
+                <h:outputText value="Password:  "/>
+                <h:inputSecret class="form-control" value="#{login.password}"/>
+            </div>
+            <h:commandButton class="btn btn-danger" value="Log in" type="submit" action="#{login.goPage()}" actionListener="#{customer.actList}">
+                <f:attribute name="email" value="#{login.email}"/>
+            </h:commandButton>
+            <h:outputText value="#{login.response}" escape="false"/>
+        </h:form>
+    </div>
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div  class="container-fluid">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li style="margin-left:600px"><a href="#">Copyright XYZ Software Since 2019</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </h:body>
+</html>
+
